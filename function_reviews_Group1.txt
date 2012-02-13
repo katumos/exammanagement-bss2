@@ -1,5 +1,0 @@
-ควรอธิบายว่า  parameter ทำหน้าที่อะไร
-
-ShowExamInfo()
-   ควรเพิ่ม section
-   
