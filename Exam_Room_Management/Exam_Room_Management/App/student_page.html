@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Student List</title>
+		<style type="text/css">.myTable { background-color:#FFFFE0;border-collapse:collapse; }
+        .myTable th { background-color:#BDB76B;color:white; }
+        .myTable td, .myTable th { padding:5px;border:1px solid #BDB76B; }
+    	</style>
+    </head>
+    <body>
+    	{% if errors %}
+	        <ul>
+	            {% for error in errors %}
+	            	<p style="color: red;">{{ error }}</p>
+	            {% endfor %}
+	        </ul>
+		{% endif %}
+		<form action="/student/" method="get">    	
+    	<center><table class="myTable">
+        <tr><th>Student ID</th><th>Student Name</th><th>Operator</th></tr>
+        {% for std in stds %}        	
+        	<tr><td>{{ std.stdID }}</td><td>{{ std.stdName }}</td><td><center><a href=http://127.0.0.1:8000/student/edit/{{ std.stdID }}/>Edit</a></center></td></tr>
+        {% endfor %}
+        <tr><td><input type="text" name="id"></td><td><input type="text" name="name"></td><td><center><input type="submit" value="+"></center></td></tr>
+        </table></center>
+        </form>
+    </body>
+</html>
