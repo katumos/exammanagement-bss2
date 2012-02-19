@@ -1,0 +1,16 @@
+<html>
+	<head><title>Student Information</title></head>
+	<body>		
+		<h3>Student Information</h3><br>
+		{% if std %}								
+			<p style="text-indent:1in">Student ID : {{ std.stdID }}</p>
+			<p style="text-indent:1in">Student Name : {{ std.stdName }}</p>
+			<br><a href=http://127.0.0.1:8000/student/edit/{{ std.stdID }}>Edit</a>
+			<br><a href=http://127.0.0.1:8000/student/delete/{{ std.stdID }}>Delete</a>
+		{% else %}
+			<p>No Information</p>
+		{% endif %}
+		<br><br><br><a href=http://127.0.0.1:8000/student/>Back</a>
+		
+	</body>
+</html>

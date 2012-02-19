@@ -1,0 +1,16 @@
+<html>
+	<head><title>Room Information</title></head>
+	<body>		
+		<h3>Room Information</h3><br>
+		{% if room %}								
+			<p style="text-indent:1in">Room ID : {{ room.roomID }}</p>
+			<p style="text-indent:1in">Size : {{ room.size }}</p>
+			<br><a href=http://127.0.0.1:8000/room/edit/{{ room.roomID }}>Edit</a>
+			<br><a href=http://127.0.0.1:8000/room/delete/{{ room.roomID }}>Delete</a>
+		{% else %}
+			<p>No Information</p>
+		{% endif %}
+		<br><br><br><a href=http://127.0.0.1:8000/room/>Back</a>
+		
+	</body>
+</html>

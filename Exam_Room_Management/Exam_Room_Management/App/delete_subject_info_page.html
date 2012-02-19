@@ -1,0 +1,12 @@
+<html>
+	<head><title>Subject Report</title></head>
+	<body>		
+		<h3>Subject Report</h3><br>		
+		{% if sub %}								
+			<center><p>Information of "{{ sub.subID }} {{ sub.subName }}" is deleted</p></center>			
+		{% else %}
+			<p>No Information</p>
+		{% endif %}
+		<br><br><br><a href=http://127.0.0.1:8000/subject/>Back</a>		
+	</body>
+</html>

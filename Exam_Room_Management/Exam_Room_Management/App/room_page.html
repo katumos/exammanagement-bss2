@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Student List</title>
+		<title>Room List</title>
 		<style type="text/css">.myTable { background-color:#FFFFE0;border-collapse:collapse; }
         .myTable th { background-color:#BDB76B;color:white; }
         .myTable td, .myTable th { padding:5px;border:1px solid #BDB76B; }
@@ -8,7 +8,7 @@
     </head>
     <body>
     	<center>
-    	<h3>Student List</h3><br>
+    	<h3>Room List</h3><br>
     	{% if errors %}
 	        <ul>
 	            {% for error in errors %}
@@ -16,13 +16,13 @@
 	            {% endfor %}
 	        </ul>
 		{% endif %}
-		<form action="/student/" method="get">    	
+		<form action="/room/" method="get">    	
     	<table class="myTable">
-        <tr><th>Student ID</th><th>Student Name</th><th>View Info</th></tr>
-        {% for std in stds %}        	
-        	<tr><td>{{ std.stdID }}</td><td>{{ std.stdName }}</td><td><center><a href=http://127.0.0.1:8000/student/{{ std.stdID }}/>>></a></center></td></tr>
+        <tr><th>Room ID</th><th>Size</th><th>View Info</th></tr>
+        {% for room in rooms %}        	
+        	<tr><td>{{ room.roomID }}</td><td>{{ room.size }}</td><td><center><a href=http://127.0.0.1:8000/room/{{ room.roomID }}/>>></a></center></td></tr>
         {% endfor %}
-        <tr><td><input type="text" name="id"></td><td><input type="text" name="name"></td><td><center><input type="submit" value="+"></center></td></tr>
+        <tr><td><input type="text" name="id"></td><td><input type="text" name="size"></td><td><center><input type="submit" value="+"></center></td></tr>
         </table></center>
         </form>
         <br><br><br><a href=http://127.0.0.1:8000/admin/>Back</a>

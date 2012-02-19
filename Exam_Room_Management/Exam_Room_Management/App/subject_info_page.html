@@ -1,0 +1,16 @@
+<html>
+	<head><title>Subject Information</title></head>
+	<body>		
+		<h3>Subject Information</h3><br>
+		{% if sub %}								
+			<p style="text-indent:1in">Subject ID : {{ sub.subID }}</p>
+			<p style="text-indent:1in">Subject Name : {{ sub.subName }}</p>
+			<br><a href=http://127.0.0.1:8000/subject/edit/{{ sub.subID }}>Edit</a>
+			<br><a href=http://127.0.0.1:8000/subject/delete/{{ sub.subID }}>Delete</a>
+		{% else %}
+			<p>No Information</p>
+		{% endif %}
+		<br><br><br><a href=http://127.0.0.1:8000/subject/>Back</a>
+		
+	</body>
+</html>
