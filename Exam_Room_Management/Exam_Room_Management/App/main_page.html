@@ -1,12 +1,21 @@
 <HTML>
 	<HEAD>
-		<TITLE>Welcome to my main page</TITLE>
+		<TITLE>Check Exam Info</TITLE>
 	</HEAD>
-    <BODY>
-		<P>This file is an example of the main page 
-		(<a href=http://127.0.0.1:8000/>http://127.0.0.1:8000/</a>)
-		</p> Link for testing<br><br>
-		<a href=http://127.0.0.1:8000/admin/>Admin</a><br>
-		{{ var }}	
+    <BODY>    	
+		<center>		
+			{% if errors %}
+	        <ul>
+	            {% for error in errors %}
+	            	<p style="color: red;">{{ error }}</p>
+	            {% endfor %}
+	        </ul>
+			{% endif %}
+			<br><br><form action="" method="get">     
+			Student ID : <input type="text" name="id" value="XX-XXXX-XXXX"> <input type="submit" value="Search">        
+	        </form>		
+			<br><br>
+			<input type="button" onclick="window.location.href='http://127.0.0.1:8000/login/'" value="Admin">
+		</center>		
 	</BODY>
 </HTML>

@@ -7,7 +7,23 @@
     	</style>
     </head>
     <body>
-    	<center>
+    	<table width="100%" border="0">
+		<tr>
+		<td colspan="2" style="background-color:#FFA500;"><center>
+		<h1>Exam Room Management</h1>
+		</center></td>
+		</tr>		
+		<tr valign="top">		
+		<td style="background-color:#FFD700;width:100px;text-align:top;"><center>
+		<br /><b>Menu</b><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/student/'" value="Student"><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/subject/'" value="Subject"><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/room/'" value="Room"><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/'" value="Back">
+		</center></td>
+		<td style="background-color:#eeeeee;width:400px;height:600px;text-align:top;"><center>
+		<br />
+		<center>
     	<h3>Student List</h3><br>
     	{% if errors %}
 	        <ul>
@@ -20,11 +36,12 @@
     	<table class="myTable">
         <tr><th>Student ID</th><th>Student Name</th><th>View Info</th></tr>
         {% for std in stds %}        	
-        	<tr><td>{{ std.stdID }}</td><td>{{ std.stdName }}</td><td><center><a href=http://127.0.0.1:8000/student/{{ std.stdID }}/>>></a></center></td></tr>
+        	<tr><td>{{ std.stdID }}</td><td>{{ std.stdName }}</td><td><center><input type="button" onclick="window.location.href='http://127.0.0.1:8000/student/{{ std.stdID }}/'" value=">>"></center></td></tr>
         {% endfor %}
         <tr><td><input type="text" name="id"></td><td><input type="text" name="name"></td><td><center><input type="submit" value="+"></center></td></tr>
         </table></center>
         </form>
-        <br><br><br><a href=http://127.0.0.1:8000/admin/>Back</a>
+		</center></td></tr>
+		</table>		
     </body>
 </html>

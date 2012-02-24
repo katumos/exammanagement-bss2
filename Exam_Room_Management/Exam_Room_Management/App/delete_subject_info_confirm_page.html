@@ -23,7 +23,23 @@
 		{% else %}
 			<p>No Information</p>
 		{% endif %}
+		{% if sub %}								
+			<script type="text/javascript">
+			var r=confirm("Are you sure you want to delete?");
+			if (r==true){
+			  alert("Information has been deleted!");
+			  window.location.href='http://127.0.0.1:8000/subject/deleted/{{ sub.subID }}/'
+			}
+			else{
+			  window.location.href='http://127.0.0.1:8000/subject/{{ sub.subID }}/'
+			}			
+			</script>			
+		{% else %}
+			<p>No Information</p>
+		{% endif %}	
 		</td></tr>
 		</table>			
 	</body>
-</html>
+</html>					
+			
+	
