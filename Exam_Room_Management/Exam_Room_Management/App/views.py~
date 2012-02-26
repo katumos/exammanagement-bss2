@@ -145,6 +145,3 @@ def delete_room_info_confirm_page(request, room_id):
 def deleting_room_info_page(request, room_id):
     ExamRoom.objects.get(roomID=room_id).delete()    
     return render_to_response('room_page.html',{'rooms':ExamRoom.objects.order_by('roomID')}) 
-
-def sorting_Examroom(request, std_id, room_id, sub_id):
-    return render_to_response('sorting_page.html',{'rooms':ExamRoom.objects.order_by('roomID')})
