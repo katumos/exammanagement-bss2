@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Student Information</title>
+		<style type="text/css">.myTable { background-color:#FFFFE0;border-collapse:collapse; }
+        .myTable th { background-color:#BDB76B;color:white; }
+        .myTable td, .myTable th { padding:5px;border:1px solid #BDB76B; }
+    	</style>
+    </head>
+    <body>    	
+    	<center>
+    	<h3>Student Information</h3><br>
+    	{% if std %}
+	    	<p>Fill information in a text box that you want to change</p>
+			<form action="/student/edit/{{ std.stdID }}" method="get">    	
+	    	<table class="myTable">
+	        <tr><th>Subject</th><th>Old Information</th><th>New Information</th></tr>	                	
+	        <tr><td>Student ID</td><td>{{ std.stdID }}</td><td><center><input type="text" name="id"></center></td></tr>
+	        <tr><td>Student Name</td><td>{{ std.stdName }}</td><td><center><input type="text" name="name"></center></td></tr>	                
+        </table>
+        	<br><input type="submit" value="Edit">
+        </form>
+        {% else %}
+        	<p>No Information.</p>
+        {% endif %}
+        </center>
+        <br><br><br>
+		<input type="button" onclick="window.location.href='http://127.0.0.1:8000/student/'" value="Back">
+    </body>
+</html>

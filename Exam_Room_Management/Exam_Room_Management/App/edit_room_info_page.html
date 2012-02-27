@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Room Information</title>
+		<style type="text/css">.myTable { background-color:#FFFFE0;border-collapse:collapse; }
+        .myTable th { background-color:#BDB76B;color:white; }
+        .myTable td, .myTable th { padding:5px;border:1px solid #BDB76B; }
+    	</style>
+    </head>
+    <body>    	
+    	<center>
+    	<h3>Room Information</h3><br>
+    	{% if room %}
+	    	<p>Fill information in a text box that you want to change</p>
+			<form action="/room/edit/{{ room.roomID }}" method="get">    	
+	    	<table class="myTable">
+	        <tr><th>Subject</th><th>Old Information</th><th>New Information</th></tr>	                	
+	        <tr><td>Room ID</td><td>{{ room.roomID }}</td><td><center><input type="text" name="id"></center></td></tr>
+	        <tr><td>Size</td><td>{{ room.size }}</td><td><center><input type="text" name="size"></center></td></tr>	                
+        </table>
+        	<br><input type="submit" value="Edit">
+        </form>
+        {% else %}
+        	<p>No Information.</p>
+        {% endif %}
+        </center>
+        <br><br><br>
+		<input type="button" onclick="window.location.href='http://127.0.0.1:8000/room/'" value="Back">
+    </body>
+</html>
