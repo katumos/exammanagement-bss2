@@ -47,7 +47,7 @@ def student_page(request):
 def student_info_page(request, std_id):
     std = Student.objects.get(stdID=std_id)
     sub = Subject.objects.all()
-    return render_to_response('student_info_page.html',{'std':std,'sub':sub})
+    return render_to_response('student_info.html',{'std':std,'sub':sub})
 
 def edit_student_info_page(request, std_id):
     std = Student.objects.get(stdID=std_id)
@@ -59,11 +59,11 @@ def edit_student_info_page(request, std_id):
         new_name = request.GET['name']
         std.stdName = new_name
         std.save()
-    return render_to_response('edit_student_info_page.html',{'std':std})
+    return render_to_response('edit_std_info.html',{'std':std})
 
 def delete_student_info_confirm_page(request, std_id):    
     std = Student.objects.get(stdID=std_id)
-    return render_to_response('delete_student_info_confirm_page.html',{'std':std})
+    return render_to_response('del_std_info.html',{'std':std})
 
 def deleting_student_info_page(request, std_id):
     Student.objects.get(stdID=std_id).delete()    
@@ -77,11 +77,10 @@ def add_exam_subject_page(request, std_id):
     if ( 'sub_id' in request.GET and request.GET['sub_id'] ) :
         sub_id = request.GET['sub_id']                       
         if Subject.objects.filter(subID=sub_id) :
-            for room in rooms :
-                                               
+            errors.append('ID does exist already.')                               
         else :
             errors.append('Subject does not exist.')         
-    return render_to_response('add_exam_subject_page.html',{'errors': errors,'subs': Subject.objects.order_by('subID'),'stdID':std.stdID})
+    return render_to_response('add_exam_subj.html',{'errors': errors,'subs': Subject.objects.order_by('subID'),'stdID':std.stdID})
 
 def subject_page(request):
     errors = []   
@@ -100,7 +99,7 @@ def subject_page(request):
 
 def subject_info_page(request, sub_id):
     sub = Subject.objects.get(subID=sub_id)
-    return render_to_response('subject_info_page.html',{'sub':sub})
+    return render_to_response('subject_info.html',{'sub':sub})
 
 def edit_subject_info_page(request, sub_id):
     sub = Subject.objects.get(subID=sub_id)
@@ -112,11 +111,11 @@ def edit_subject_info_page(request, sub_id):
         new_name = request.GET['name']
         sub.subName = new_name
         sub.save()
-    return render_to_response('edit_subject_info_page.html',{'sub':sub})
+    return render_to_response('edit_subj_info.html',{'sub':sub})
 
 def delete_subject_info_confirm_page(request, sub_id):    
     sub = Subject.objects.get(subID=sub_id)
-    return render_to_response('delete_subject_info_confirm_page.html',{'sub':sub})
+    return render_to_response('del_subj_info.html',{'sub':sub})
 
 def deleting_subject_info_page(request, sub_id):
     Subject.objects.get(subID=sub_id).delete()      
@@ -151,11 +150,11 @@ def edit_room_info_page(request, room_id):
         new_size = int(request.GET['size'])
         room.size = new_size
         room.save()
-    return render_to_response('edit_room_info_page.html',{'room':room})
+    return render_to_response('edit_room_info.html',{'room':room})
 
 def delete_room_info_confirm_page(request, room_id):    
     room = ExamRoom.objects.get(roomID=room_id)
-    return render_to_response('delete_room_info_confirm_page.html',{'room':room})
+    return render_to_response('del_room_info.html',{'room':room})
 
 def deleting_room_info_page(request, room_id):
     ExamRoom.objects.get(roomID=room_id).delete()    

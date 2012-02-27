@@ -1,0 +1,45 @@
+<html>
+	<head><title>Room Information</title></head>
+	<body>		
+		<table width="100%" border="0">
+		<tr>
+		<td colspan="2" style="background-color:#FFA500;"><center>
+		<h1>Exam Room Management</h1>
+		</center></td>
+		</tr>		
+		<tr valign="top">		
+		<td style="background-color:#FFD700;width:100px;text-align:top;"><center>
+		<br /><b>Menu</b><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/room/edit/{{ room.roomID }}/'" value="Edit"><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/room/deleting/{{ room.roomID }}/'" value="Delete"><br />		
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/room/'" value="Back">
+		</center></td>
+		<td style="background-color:#eeeeee;width:400px;height:600px;text-align:top;">
+		<br />
+		<h3>Room Information</h3><br>
+		{% if room %}								
+			<p style="text-indent:1in">Room ID : {{ room.roomID }}</p>
+			<p style="text-indent:1in">Size : {{ room.size }}</p>			
+		{% else %}
+			<p>No Information</p>
+		{% endif %}
+		{% if room %}								
+			<script type="text/javascript">
+			var r=confirm("Are you sure you want to delete?");
+			if (r==true){
+			  alert("Information has been deleted!");
+			  window.location.href='http://127.0.0.1:8000/room/deleted/{{ room.roomID }}/'
+			}
+			else{
+			  window.location.href='http://127.0.0.1:8000/room/{{ room.roomID }}/'
+			}			
+			</script>			
+		{% else %}
+			<p>No Information</p>
+		{% endif %}	
+		</td></tr>
+		</table>		
+	</body>
+</html>						
+			
+	

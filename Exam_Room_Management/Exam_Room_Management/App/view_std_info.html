@@ -1,0 +1,14 @@
+<html>
+	<head><title>Student Information</title></head>
+	<body>		
+		<h3>Student Information</h3><br>
+		{% if std %}							
+			<p style="text-indent:1in">Student ID : {{ std.stdID }}</p>
+			<p style="text-indent:1in">Student Name : {{ std.stdName }}</p>			
+		{% else %}
+			<p>No Information</p>
+		{% endif %}
+		<br><br><br>
+		<input type="button" onclick="window.location.href='http://127.0.0.1:8000/'" value="Back">
+	</body>
+</html>
