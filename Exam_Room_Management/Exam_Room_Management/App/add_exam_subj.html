@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Student List</title>		
+    </head>
+    <body>
+    	<table width="100%" border="0">
+		<tr>
+		<td colspan="2" style="background-color:#FFA500;"><center>
+		<h1>Exam Room Management</h1>
+		</center></td>
+		</tr>		
+		<tr valign="top">		
+		<td style="background-color:#FFD700;width:100px;text-align:top;"><center>
+		<br /><b>Menu</b><br />		
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/student/{{ stdID }}'" value="Back">
+		</center></td>
+		<td style="background-color:#eeeeee;width:400px;height:600px;text-align:top;"><center>
+		<br />
+		<center>
+    	<br>
+    	{% if errors %}
+	        <ul>
+	            {% for error in errors %}
+	            	<p style="color: red;">{{ error }}</p>
+	            {% endfor %}
+	        </ul>
+		{% endif %}
+		{% if subs %}
+		<form action="/student/addSub/{{ stdID }}" method="get">    	
+    	Subject :     	
+    	{% for sub in subs %}
+    		<input type="radio" name="sub_id" value="{{ sub.subID }}" /> {{ sub.subName }}  
+    	{% endfor %}   	
+    	<br/><br/><input type="submit" value="add">
+        </form>
+        {% endif %}
+		</center>
+		</td></tr></table>		
+    </body>
+</html>

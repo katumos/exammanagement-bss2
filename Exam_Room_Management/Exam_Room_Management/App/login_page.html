@@ -1,0 +1,26 @@
+<html>
+	<head>
+	    <title>Login Form</title>
+	</head>
+	<body>
+		<center>
+			<h3>Login Form</h3>
+			{% if errors %}
+			        <ul>
+			            {% for error in errors %}
+			            	<p style="color: red;">{{ error }}</p>
+			            {% endfor %}
+			        </ul>
+			{% endif %}
+			<table border="1" cellspacing="6" width="380" height="200">
+			<tr><td align="center"> Subject </td><td align="center"> Information </td></tr>
+			<form action="/login/" method="get">
+			<tr><td><p><center>Username</center></p></td><td><center><input type="text" name="user"></center></td></tr>
+			<tr><td><p><center>Password</center></p></td><td><center><input type="password" name="pass"></center></td></tr></table>
+			<br><input type="submit" value="Enter">
+			</form>
+			<br><br>
+			<input type="button" onclick="window.location.href='http://127.0.0.1:8000/'" value="Back">
+		</center>
+	</body>
+</html>
