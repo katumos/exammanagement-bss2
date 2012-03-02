@@ -1,0 +1,146 @@
+Testing Test Case
+ Project Group 1 : Programming subject management 
+
+## Tested by Akkarachai Raungthai 5211165310 Group2 
+## Tested date : Start 1 march 2012 2.17 pm. Finish - 1 March 2012 3.14 pm.
+
+Teacher and TA:
+		Test Add student name : กรอกชื่อนักเรียน
+		Purpose		       : เช็คว่าชื่อของนักเรียนถูกต้อง
+		Inputs		       : ชื่อนักเรียน,รหัสนักเรียน
+		Test			       : พิมพ์ชื่อ,สกุล นักเรียนถูก เช่น  ชื่อในข้อมูล  นายสมบัติ พูลสวัสดิ์ ชื่อในการlonig     นายสมบัติ พูลสวัสดิ์ 
+		Result           	       : ผ่าน โปรแกรมจะเข้าไปยังหน้าMain
+
+
+## Tested Result : Not Complete
+## Reason : Does Program check field immediately after student id field unactive ? / What is main page ? / How does Program know that the name enter is correct ? 	        
+					       
+		Test			       : กรอกชื่อ,นามสกุล เช่น ชื่อในข้อมูล  นายสมบัติ พูลสวัสดิ์ชื่อในการ  lonig  นายสมบัติ พูลสวัสดิ์ 
+		Result            	       : ผ่าน โปรแกรมจะเข้าไปยังหน้าMain	
+
+## Tested Result : Not Complete
+## Reason : How does Program know the name entered is correct ? / Is case made for login or adding ?
+					        
+		Test			       : รหัสนักเรียน รหัสในข้อมูล 52-1116-111-1  รหัสในการlonig 52-1116-111-2 	
+		Result           	       :  ผ่าน โปรแกรมจะเข้าไปยังหน้าMain
+
+## Tested Result : Not Complete
+## Reason : How does Program know the Student ID entered is correct ? / Is case made for login or adding ?
+
+
+                Test			       : พิมพ์ชื่อ,สกุล นักเรียนผิด เช่น  ชื่อในข้อมูล  นายสมบัติ พูลสวัสดิ์  ชื่อในการlonig     นายสมบัต พูลสวัสดิ 
+		Result           	       : ไม่ผ่าน โปรแกรมจะให้กรอกข้อมูลใหม่      
+					       
+## Tested Result : Not Complete
+## Reason : How does Program know the name entered is correct ?
+
+		Test			       : ใส่ชื่อ ไม่ได้ใส่นามสกุล เช่น  ชื่อในข้อมูล  นายสมบัติ พูลสวัสดิ์  ชื่อในการlonig      นายสมบัติ 
+		Result            	       : ไม่ผ่าน โปรแกรมจะให้กรอกข้อมูลใหม่				         
+					        
+## Tested Result : PASS
+
+		Test			       : รหัสนักเรียนซ้ำรหัสในข้อมูล 52-1116-111-1  รหัสในการlonig 52-1116-111-1 	
+		Result           	       :ไม่ผ่าน โปรแกรมจะแสดงผลว่ามีข้อมูลรหัสนี้แล้ว
+
+## Tested Result : PASS
+		
+
+                Test Add midteam score : กรอกคะแนน midteam
+		Purpose		        	 : เช็คว่ามีรหัสนักเรียนที่เรียน Progamming, เช็คคะแนนmidteam 30%
+		Inputs			         : คะแนนmidteam
+		Test			         : กรอกรหัสนักเรียน เช่น รหัสในข้อมูล 52-1116-111-1 รหัสในการกรอกคะแนน 52-1116-111-1
+		Result		         	 : ผ่าน สามารถลงคะแนนคนต่อไปได้
+
+## Tested Result : PASS
+
+		Test 			         : กรอกคะแนนmidteam  เช่น คะแนนmidteam 30%  กรอกคะแนนmidteam 25
+		Result    		         : ผ่าน สามารถลงคะแนนคนต่อไปได้	
+
+## Tested Result : PASS
+				 
+		Test			         : กรอกรหัสนักเรียนผิด เช่น รหัสในข้อมูล 52-1116-111-1 รหัสในการกรอกคะแนน 52-1116-111-2
+		Result		        	 : ไม่ผ่าน โปรแกรมจะให้กรอกข้อมูลใหม่	
+
+## Tested Result : PASS
+
+		Test 			         : กรอกคะแนนmidteam  เช่o คะแนนmidteam 30% กรอกคะแนนmidteam 50
+		Result    		         : ไม่ผ่าน โปรแกรมจะให้กรอกข้อมูลใหม่					
+	 
+## Tested Result : PASS
+		
+
+		Test Add final score      	 : กรอกคะแนน Final
+		Purpose		        	 : เช็คว่ามีรหัสนักเรียนที่เรียน Progamming,  เช็คคะแนน Final 40%
+		Inputs			         : คะแนนFinal
+		Test			         : กรอกรหัสนักเรียน เช่น รหัสในข้อมูล 52-1116-111-1 รหัสในการกรอกคะแนน 52-1116-111-1
+		Result		        	 : ผ่าน สามารถลงคะแนนคนต่อไปได้
+
+## Tested Result : PASS
+
+		Test 			         : กรอกคะแนนFinal  เช่น คะแนนFinal 40%   กรอกคะแนนFinal  37
+		Result    		         : ผ่าน สามารถลงคะแนนคนต่อไปได้	
+
+## Tested Result : PASS
+			 
+		est			         : กรอกรหัสนักเรียนผิด เช่น รหัสในข้อมูล 52-1116-111-1 รหัสในการกรอกคะแนน 52-1116-111-2
+		Result		         	 : ไม่ผ่าน โปรแกรมจะให้กรอกข้อมูลใหม่	
+
+## Tested Result : PASS
+
+		Test 			         : กรอกคะแนนFinal เช่น คะแนนFinal 40%  กรอกคะแนนFinal  50
+		Result    		         : ไม่ผ่าน โปรแกรมจะให้กรอกข้อมูลใหม่
+
+## Tested Result : PASS
+
+		Test Add lab score          	 : กรอกคะแนน Lab
+		Purpose		        	 : เช็คว่ามีรหัสนักเรียนที่เรียน Progamming,  เช็คคะแนน Lab 30%
+		Inputs			         : คะแนนLab
+		Test			         : กรอกรหัสนักเรียน เช่น รหัสในข้อมูล 52-1116-111-1 รหัสในการกรอกคะแนน 52-1116-111-1
+		Result		      	         : ผ่าน สามารถลงคะแนนคนต่อไปได้
+
+## Tested Result : PASS
+
+		Test 			         : กรอกคะแนนLab  เช่น คะแนนLab 30% กรอกคะแนนLab  17
+		Result    		         : ผ่าน สามารถลงคะแนนคนต่อไปได้	
+
+## Tested Result : PASS
+		 
+		Test			         : กรอกรหัสนักเรียนผิด เช่น รหัสในข้อมูล 52-1116-111-1 รหัสในการกรอกคะแนน 52-1116-111-2
+		Result		         	 : ไม่ผ่าน โปรแกรมจะให้กรอกข้อมูลใหม่	
+
+## Tested Result : PASS
+
+		Test 			         : กรอกคะแนนLab   เช่น คะแนนLab 30%   กรอกคะแนนFinal  34
+		Result    		       	 : ไม่ผ่าน โปรแกรมจะให้กรอกข้อมูลใหม่
+
+## Tested Result : PASS
+
+
+             	Test Add all score         	  : กรอกคะแนนรวมทั้งหมด
+		Purpose		         	  : เช็คว่ามีรหัสนักเรียนที่เรียน Progamming,  เช็คคะแนนรวม 100%
+		Inputs			          : คะแนนรวม
+		Test			          : กรอกรหัสนักเรียน เช่น รหัสในข้อมูล 52-1116-111-1 รหัสในการกรอกคะแนน 52-1116-111-1
+		Result		         	  : ผ่าน สามารถลงคะแนนคนต่อไปได้
+
+## Tested Result : PASS
+
+		Test 			         : กรอกคะแนนรวม  เช่น คะแนน midteam 30% คะแนน final 40% คะแนน lab 30% กรอกคะแนนรวม  60
+		Result    		         : ผ่าน สามารถลงคะแนนคนต่อไปได้						 
+
+## Tested Result : PASS
+
+		Test			         : กรอกรหัสนักเรียนผิด เช่น รหัสในข้อมูล 52-1116-111-1 รหัสในการกรอกคะแนน 52-1116-111-2
+		Result		        	 : ไม่ผ่าน โปรแกรมจะให้กรอกข้อมูลใหม่	
+
+## Tested Result : PASS
+
+
+
+##### Tested Summary #####
+Total testcase : 21
+PASS : 17
+FAIL : 0
+Not Complete : 4
+
+Score for this Group : 8
+

@@ -1,0 +1,16 @@
+-ในส่วของหน้า PSM.view 
+	ควรที่จะมี link ระหว่าง teacher กับ student ที่แตกต่างจาก รูป Programming Subject Management เพราะไม่รู้ว่าจะกดตรงส่วนไหน ตัว link มันใกล้เคียงกันมาก 
+-Test usecase Add Student
+	ไม่มีการเกิด errors แต่การใส่ชื่อ นามสกุล ไม่ใช่การ login จึงควรมีการปรับปรุง 
+-Test usecase upload File
+	มีการ errors โดยใส่ file PDF แล้วไม่สามารถ uplode ได้ และควรที่จะมีหน้า ย้อนกลับไปหน้า main ของ teacher
+-Test usecase sent grade 
+	เกิด errors เพราะไม่ทราบว่าช่อง input ควรที่จะค่าอะไรลงไป ข้าพเจ้าได้ใส่ ID,GRADE,NAME แล้วไม่ปรากฎข้อมูลที่ต้องการ
+-Test usecase grade graph
+	เกิด errors เมื่อข้าพเจ้าทำการใส่ sec ไปตามที่กำหนด แต่ไม่ปรากฎกราฟ
+-Test usecase ของ teacher ทุก case ควรที่จะมีหน้าย้อนกลับไปหน้า main  
+
+
+	สรุป
+ผ่าน 6 Testcase
+ไม่ผ่าน 5 Testcase

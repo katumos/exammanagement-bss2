@@ -1,0 +1,47 @@
+## Tested by : Akkaachai Raungthai 5211165310
+## Tested date : 1 Mar 2012  started on 3.14pm finished 3.15pm
+
+Use case 1 authentication
+
+	test case 1.1: by rathapon
+		input username    input password    output and permission
+	      -yamiruma	  	  yamirumajung	    guest page and view history
+	      -admin	  	  yamiruma          into admin page and manage sysytem
+
+## Tested result : FAIL
+## Reason : Unable to open project
+
+	test case 1.2: by suwapit
+		input username    input password    output and permission
+	      -admin		  password          error password
+	      -admin	          yamiruma          go to admin page and manage sysytem
+	      -suwapit		  password	    go to guest page
+
+## Tested result : FAIL
+## Reason : Unable to open project
+
+Use case 2 add computer   
+
+	test case 1.1: by rathapon
+		input com_ID    input com_status    output in  DB
+	      -HP_g1  	  	online		    have new computer object ID HP_g1
+	      -HP_g2	  	offline		    have new computer object but must input problem
+
+## Tested result : FAIL
+## Reason : Unable to open project
+
+	test case 1.2: by suwapit
+		input com_ID    input com_status    output in  DB
+	      -HP_g31234  	online		    error com_ID is longer must 7 charactor
+	      -HP_g4	  	-		    error must input status
+
+## Tested result : FAIL
+## Reason : Unable to open project
+
+
+##### Summary #####
+Total : 4
+PASS : 0
+FAIL : 4
+
+Score : 5

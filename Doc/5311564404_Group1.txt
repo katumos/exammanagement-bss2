@@ -1,0 +1,30 @@
+Group 1 : Project Subject Management
+
+Test Case 1 : Add Student - Good
+
+Test Case 2 : Add/Edit Midterm Score - Good
+
+Test Case 3 : Add/Edit Lab Score - Good
+
+Test Case 4 : Add/Edit Final Score - Good
+
+Test Case 5 : Add All Score - Fial ( ไม่มีส่วนการใช้งาน )
+
+Test Case 6 : Add Grade for Student - Fail ( ไม่มีส่วนการใช้งาน )
+
+Test Case 7 : Edit Student Name - Fial ( ไม่มีส่วนการใช้งาน )
+
+Test Case ที่เสนอให้มีเพิ่มเติม :
+
+	-Romove Student
+
+	-Show Grade for Student
+
+	-Upload File
+
+	-Graph SVG
+
+	-Sent Grade
+
+	-Calculation Grade
+

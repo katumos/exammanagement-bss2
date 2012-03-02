@@ -1,0 +1,21 @@
+Group 3 : Computer Management
+
+Test Case 1 : Send Inform - Fial ( ไม่สามารถรันเซิฟเวอร์ได้ )
+
+Test Case 2 : User login - Fial ( ไม่สามารถรันเซิฟเวอร์ได้ )
+
+Test Case 3 : Add/Edit/Delete Computer - Fial ( ไม่สามารถรันเซิฟเวอร์ได้ )
+
+Test Case 4 : Add/Edit/Delete User/Fixer - Fial ( ไม่สามารถรันเซิฟเวอร์ได้ )
+
+Test Case 5 : Fixer Complete Report - Fial ( ไม่สามารถรันเซิฟเวอร์ได้ )
+
+Test Case 6 : History - Fial ( ไม่สามารถรันเซิฟเวอร์ได้ )
+
+Test Case 7 : Show Computer - Fial ( ไม่สามารถรันเซิฟเวอร์ได้ )
+
+Test Case ที่เสนอให้มีเพิ่มเติม :
+
+	
+
+
