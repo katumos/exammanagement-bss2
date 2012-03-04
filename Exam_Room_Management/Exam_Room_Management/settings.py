@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/first/workspace/Exam_Room_Management/sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME': 'sqlite.db',                     # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -103,7 +103,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'Exam_Room_Management.urls'
 
 TEMPLATE_DIRS = (
-    '/home/first/workspace/Exam_Room_Management/Exam_Room_Management/App'
+    '/home/nunnorth/Desktop/Exam_Room_Management/Exam_Room_Management/App'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -121,6 +121,17 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    
+)
+
+PASSWORD_HASHERS = (
+    'myproject.hashers.MyPBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+    'django.contrib.auth.hashers.CryptPasswordHasher',
 )
 
 # A sample logging configuration. The only tangible logging

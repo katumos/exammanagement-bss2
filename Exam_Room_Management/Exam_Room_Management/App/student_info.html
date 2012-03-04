@@ -22,10 +22,16 @@
 			<center><table cellpadding="5" cellspacing="10"<tr><td >  							
 			<p>Student ID : {{ std.stdID }}</p>
 			<p>Student Name : {{ std.stdName }}</p>
-			Subject : 
+			{% for info in std.examInfo %}				
+				<center><fieldset>
+				<legend>{{ info.1 }}</legend>
+				{{ info.0 }} {{ info.1 }}<br/>
+				{{ info.2 }} {{ info.3 }}
+				</fieldset></center><br/>
+			{% endfor %}
 			</table></center> 		
 		{% else %}
-			<p>No Information</p>
+			<p>No Information.</p>
 		{% endif %}
 		</td></tr>
 		</table>				

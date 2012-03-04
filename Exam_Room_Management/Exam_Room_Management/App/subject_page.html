@@ -34,8 +34,8 @@
 		{% endif %}
 		<form action="/subject/" method="get">    	
     	<table class="myTable">
-        <tr><th>Subject ID</th><th>Subject Name</th><th>View Info</th></tr>
-        {% for sub in subs %}        	
+        <tr><th>Subject ID</th><th>Subject Name</th><th>More Info</th></tr>
+        {% for sub in sub %}        	
         	<tr><td>{{ sub.subID }}</td><td>{{ sub.subName }}</td><td><center><input type="button" onclick="window.location.href='http://127.0.0.1:8000/subject/{{ sub.subID }}/'" value=">>"></center></td></tr>
         {% endfor %}
         <tr><td><input type="text" name="id"></td><td><input type="text" name="name"></td><td><center><input type="submit" value="+"></center></td></tr>
