@@ -1,4 +1,5 @@
 # Django settings for Exam_Room_Management project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -103,7 +104,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'Exam_Room_Management.urls'
 
 TEMPLATE_DIRS = (
-    '/home/nunnorth/Desktop/Exam_Room_Management/Exam_Room_Management/App'
+    os.path.join(os.path.dirname(__file__), 'App'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
