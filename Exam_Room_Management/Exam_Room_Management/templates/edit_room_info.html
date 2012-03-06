@@ -1,0 +1,82 @@
+<html>
+	<head>
+	<title>Room Information</title>
+	<style type="text/css">.myTable { background-color:#FFFFE0;border-collapse:collapse; }
+    .myTable th { background-color:#BDB76B;color:white; }
+    .myTable td, .myTable th { padding:5px;border:1px solid #BDB76B; }
+	</style>
+	</head>
+	<body>		
+		<table width="100%" border="0">
+		<tr>
+		<td colspan="2" style="background-color:#FFA500;"><center>
+		<h1>Exam Room Management</h1>
+		</center></td>
+		</tr>		
+		<tr valign="top">		
+		<td style="background-color:#FFD700;width:100px;text-align:top;"><center>
+		<br /><b>Menu</b><br />		
+		{% if room %}	
+			<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/room/{{ room.roomID }}/{{ room.date }}/{{ room.time }}/'" value="Back">
+		{% else %}
+			<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/room/'" value="Back">
+		{% endif %}
+		</center></td>
+		<td style="background-color:#eeeeee;width:400px;height:600px;text-align:top;">
+		<br />
+		<center>
+    	<h3>Room Information</h3><br>
+    	{% if room %}
+	    	<p>Fill information in a text box that you want to change</p>
+			<form action="/room/edit/{{ room.roomID }}" method="get">    	
+	    	<table class="myTable">
+	        <tr><th>Subject</th><th>Old Information</th><th>New Information</th></tr>	                	
+	        <tr><td>Room ID</td><td>{{ room.roomID }}</td><td><center><input type="text" name="id"></center></td></tr>
+	        <tr><td>Size</td><td>{{ room.size }}</td><td><center><input type="text" name="size"></center></td></tr>	                
+        	<tr><td>Capacity</td><td>{{ room.capacity }}</td><td><center><input type="text" name="cap"></center></td></tr>
+        	<tr><td>Subject</td><td>{{ room.subj }}</td>
+        	<td><center>
+			{% if subjs %}
+        	<select name="subj">				
+				{% for subj in subjs %}					
+					<option value="{{ subj.subjID }}">{{ subj.subjName }}</option>
+				{% endfor %}
+			</select>
+			{% endif %}
+        	</center></td></tr>
+        	<tr><td>Date</td><td>{{ room.date }}</td>
+        	<td><center>
+			<select name="day">
+				<option value="1" selected>1</option>
+				{% for d in days %}					
+					<option value="{{ d }}">{{ d }}</option>
+				{% endfor %}
+			</select>
+			<select name="month">
+				<option value="1" selected>1</option>
+				{% for m in months %}					
+					<option value="{{ m }}">{{ m }}</option>
+				{% endfor %}
+			</select>
+			<select name="year">
+				<option value="2012" selected>2012</option>					
+			</select>
+        	</center></td></tr>
+        	<tr><td>Time</td><td>{{ room.time }}</td>
+        	<td><center>
+			<select name="time">
+				<option value="9:00-12:00" selected>9:00-12:00</option>
+				<option value="13:00-15:00">13:00-15:00</option>
+				<option value="13:00-16:00">13:00-16:00</option>
+			</select>
+        	</center></td></tr>
+        </table>
+        	<br><br><input type="submit" value="Edit">
+        </form>
+        {% else %}
+        	<p>No Information.</p>
+        {% endif %}                        
+		</center></td></tr>
+		</table>			
+	</body>
+</html>
