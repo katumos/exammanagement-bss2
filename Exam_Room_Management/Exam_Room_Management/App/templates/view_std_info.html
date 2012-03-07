@@ -1,0 +1,28 @@
+<html>
+	<head><title>Student Information</title></head>
+	<body>		
+		<h3>Student Information</h3><br>
+		{% if std %}							
+			<center><table cellpadding="5" cellspacing="10"<tr><td >  							
+			<p>Student ID : {{ std.stdID }}</p>
+			<p>Student Name : {{ std.stdName }}</p>
+			{% if arrInfo %}
+				{% for info in arrInfo %}				
+					<center><fieldset>
+					<legend>{{ info.1 }}</legend>
+					Subject : {{ info.0 }} {{ info.1 }}<br/>
+					Room : {{ info.2 }}<br/>
+					Date : {{ info.3 }}<br/>
+					Time : {{ info.4 }}<br/>	
+					<center><input type="button" onclick="window.location.href='http://127.0.0.1:8000/seat/view/{{ std.stdID }}/{{ info.2 }}/{{ info.3 }}/{{ info.4 }}'" value="view seat"></center>				
+					</fieldset></center><br/>
+				{% endfor %}
+			{% endif %}
+			</table></center>			
+		{% else %}
+			<p>No Information</p>
+		{% endif %}
+		<br><br><br>
+		<input type="button" onclick="window.location.href='http://127.0.0.1:8000/'" value="Back">
+	</body>
+</html>

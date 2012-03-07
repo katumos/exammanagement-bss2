@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>Student List</title>		
+    </head>
+    <body>
+    	<table width="100%" border="0">
+		<tr>
+		<td colspan="2" style="background-color:#FFA500;"><center>
+		<h1>Exam Room Management</h1>
+		</center></td>
+		</tr>		
+		<tr valign="top">		
+		<td style="background-color:#FFD700;width:100px;text-align:top;"><center>
+		<br /><b>Menu</b><br />		
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/room/{{ roomID }}'" value="Back">
+		</center></td>
+		<td style="background-color:#eeeeee;width:400px;height:600px;text-align:top;"><center>
+		<br />
+		<center>
+    	<br>
+    	{% if errors %}
+	        <ul>
+	            {% for error in errors %}
+	            	<p style="color: red;">{{ error }}</p>
+	            {% endfor %}
+	        </ul>
+		{% endif %}
+		{% if subs %}
+		<form action="/room/add/{{ roomID }}/" method="get">      	
+		<table cellpadding="5" cellspacing="10"<tr><td ><fieldset>
+		<legend>Add Exam Info</legend>		
+		Time 1 : <select name="timeA">
+					<option value="9:00-12:00" selected>9:00-12:00</option>
+					<option value="13:00-15:00">13:00-15:00</option>
+					<option value="13:00-16:00">13:00-16:00</option>
+				 </select>
+		<ul>
+		Subject 1 : <select name="subA_timeA">
+						<option value="Empty" selected>Empty</option>
+						{% for sub in subs %}					
+							<option value="{{ sub.subID }}">{{ sub.subName }}</option>
+						{% endfor %}
+					 </select>
+		Subject 2 : <select name="subB_timeA">
+						<option value="Empty" selected>Empty</option>
+						{% for sub in subs %}					
+							<option value="{{ sub.subID }}">{{ sub.subName }}</option>
+						{% endfor %}
+					 </select>
+		</ul>	 
+		Time 2 : <select name="timeB">
+					<option value="9:00-12:00">9:00-12:00</option>
+					<option value="13:00-15:00">13:00-15:00</option>
+					<option value="13:00-16:00" selected>13:00-16:00</option>
+				 </select>
+		<ul>
+		Subject 1 : <select name="subA_timeB">
+						<option value="Empty" selected>Empty</option>
+						{% for sub in subs %}					
+							<option value="{{ sub.subID }}">{{ sub.subName }}</option>
+						{% endfor %}
+					 </select>
+		Subject 2 : <select name="subB_timeB">
+						<option value="Empty" selected>Empty</option>
+						{% for sub in subs %}					
+							<option value="{{ sub.subID }}">{{ sub.subName }}</option>
+						{% endfor %}
+					 </select>
+		</ul>	 		
+		<br/><br/><center><input type="submit" value="Edit"></center>
+		</fieldset><br/></table>   	    	
+        </form>
+        {% endif %}
+		</center>
+		</td></tr></table>		
+    </body>
+</html>
