@@ -18,18 +18,13 @@
 	  	<text x="100" y="110" font-size="16">SubjectB : {{ subjB.subjID }} {{ subjB.subjName }}</text>
 	  {% else %}
 	  	<text x="100" y="110" font-size="16">SubjectB : -</text>
-	  {% endif %}	  
+	  {% endif %}
+	  
 	  {% for col in rectPos %}  
 	  	{% for row in col %}
-	  		{% if row.4 == target and highlight %}
-			  <rect x="{{ row.0 }}" y="{{ row.1 }}" width="100" height="50"
-			   fill="yellow" stroke="black" stroke-width="1"/>
-			   <text x="{{ row.2 }}" y="{{ row.3 }}" font-size="10">{{ row.4 }}</text>
-			{% else %}
-				<rect x="{{ row.0 }}" y="{{ row.1 }}" width="100" height="50"
-			   fill="none" stroke="black" stroke-width="1"/>
-			   <text x="{{ row.2 }}" y="{{ row.3 }}" font-size="10">{{ row.4 }}</text>
-			{% endif %}	   
+		  <rect x="{{ row.0 }}" y="{{ row.1 }}" width="100" height="50"
+		   fill="none" stroke="black" stroke-width="1"/>
+		   <text x="{{ row.2 }}" y="{{ row.3 }}" font-size="10">{{ row.4 }}</text>	   
 		{% endfor %}
 	  {% endfor %}
 	{% endif %}   
