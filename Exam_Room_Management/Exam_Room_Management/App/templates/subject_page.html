@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Subject List</title>
+		<style type="text/css">.myTable { background-color:#FFFFE0;border-collapse:collapse; }
+        .myTable th { background-color:#BDB76B;color:white; }
+        .myTable td, .myTable th { padding:5px;border:1px solid #BDB76B; }
+    	</style>
+    </head>
+    <body>
+    	<table width="100%" border="0">
+		<tr>
+		<td colspan="2" style="background-color:#FFA500;"><center>
+		<h1>Exam Room Management</h1>
+		</center></td>
+		</tr>		
+		<tr valign="top">		
+		<td style="background-color:#FFD700;width:100px;text-align:top;"><center>
+		<br /><b>Menu</b><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/student'" value="Student"><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/subject'" value="Subject"><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/room'" value="Room"><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/admin'" value="Back">
+		</center></td>
+		<td style="background-color:#eeeeee;width:600px;height:600px;text-align:top;"><center>
+		<br />
+		<center>
+    	<h3>Subject List</h3><br>
+    	{% if errors %}
+	        <ul>
+	            {% for error in errors %}
+	            	<p style="color: red;">{{ error }}</p>
+	            {% endfor %}
+	        </ul>
+		{% endif %}
+		<form action="/subject/" method="get">    	
+    	<table class="myTable">
+        <tr><th>Subject ID</th><th>Subject Name</th><th>More Info</th></tr>
+        {% for subj in subjs %}        	
+        	<tr><td>{{ subj.subjID }}</td><td>{{ subj.subjName }}</td><td><center><input type="button" onclick="window.location.href='http://127.0.0.1:8000/subject/{{ subj.subjID }}/'" value=">>"></center></td></tr>
+        {% endfor %}
+        <tr><td><input type="text" maxlength="20" name="id"></td><td><input type="text" maxlength="20" name="name"></td><td><center><input type="submit" value="+"></center></td></tr>
+        </table></center>
+        </form>
+		</center></td></tr>
+		</table>        
+    </body>
+</html>
