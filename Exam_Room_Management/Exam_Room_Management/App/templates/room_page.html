@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>Room List</title>
+		<style type="text/css">.myTable { background-color:#FFFFE0;border-collapse:collapse; }
+        .myTable th { background-color:#BDB76B;color:white; }
+        .myTable td, .myTable th { padding:5px;border:1px solid #BDB76B; }
+    	</style>
+    </head>
+    <body>
+    	<table width="100%" border="0">
+		<tr>
+		<td colspan="2" style="background-color:#FFA500;"><center>
+		<h1>Exam Room Management</h1>
+		</center></td>
+		</tr>		
+		<tr valign="top">		
+		<td style="background-color:#FFD700;width:100px;text-align:top;"><center>
+		<br /><b>Menu</b><br />		
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/student'" value="Student"><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/subject'" value="Subject"><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/room'" value="Room"><br />
+		<br /><input type="button" onclick="window.location.href='http://127.0.0.1:8000/admin'" value="Back">
+		</center></td>
+		<td style="background-color:#eeeeee;width:400px;height:600px;text-align:top;"><center>
+		<br />
+		<center>
+    	<h3>Room List</h3><br>    	
+    	{% if errors %}
+	        <ul>
+	            {% for error in errors %}
+	            	<p style="color: red;">{{ error }}</p>
+	            {% endfor %}
+	        </ul>
+		{% endif %}		
+		<form action="/room/" method="get">    	
+    	<table class="myTable">
+        <tr><th>Room ID</th><th>Date/Month/Year</th><th>Time</th><th>Subject</th><th>More Info</th></tr>
+        {% for room in rooms %}        	
+        	<tr><td>{{ room.roomID }}</td><td><center>{{ room.date }}</center></td><td><center>{{ room.time }}</center></td><td>{{ room.subj }}</td><td><center><input type="button" onclick="window.location.href='http://127.0.0.1:8000/room/{{ room.roomID }}/{{ room.date }}/{{ room.time }}/{{ room.subj }}'" value=">>"></center></td></tr>
+        {% endfor %}        
+        <tr><td><input type="text" maxlength="10" name="id" style="width:100px"></td>
+        <td>
+        	<select name="day">
+				<option value="1" selected>1</option>
+				{% for d in days %}					
+					<option value="{{ d }}">{{ d }}</option>
+				{% endfor %}
+			</select>
+			<select name="month">
+				<option value="1" selected>1</option>
+				{% for m in months %}					
+					<option value="{{ m }}">{{ m }}</option>
+				{% endfor %}
+			</select>
+			<select name="year">
+				<option value="2012" selected>2012</option>					
+			</select>
+        </td>
+        <td>
+        	<select name="time">
+				<option value="9:00-12:00" selected>9:00-12:00</option>
+				<option value="13:00-15:00">13:00-15:00</option>
+				<option value="13:00-16:00">13:00-16:00</option>
+			</select>
+        </td>
+        <td>
+        	{% if subjs %}
+        	<select name="subj">				
+				{% for subj in subjs %}					
+					<option value="{{ subj.subjName }}">{{ subj.subjName }}</option>
+				{% endfor %}
+			</select>
+			{% endif %}
+        </td>
+        <td><center><input type="submit" value="+"></center></td></tr>
+        </table></center>
+        </form>	    
+		</center></td></tr>
+		</table>        
+    </body>
+</html>
