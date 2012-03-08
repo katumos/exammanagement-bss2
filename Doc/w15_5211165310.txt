@@ -1,0 +1,28 @@
+Group3
+-review
+	sent infrom
+	show
+	fixer report
+	graph
+	edit computer
+	edit user
+
+Group1
+-review
+	edit score
+	edit student
+	get info (grade,student,score)
+	graph
+	upload file
+-extra
+	silineum
+
+#######################
+Score for each group
+Group 1 : 8
+Group 3 : 7
+#######################
+Things to do for Finishing Project
+- Change position "View seat" and "delete subject" button
+- try case 1 student take 2 exam
+- etc.
