@@ -1,0 +1,35 @@
+Group3 : Computer Management
+
+- Use case diagram
+- Test case
+- Function
+
+Guest
+- Login
+- view graph
+- sent request
+
+History
+- view graph
+- show history
+
+Score : 9/10
+
+--------------------------------------------------------------
+
+Group1 : Programming subject management
+
+- Requirement
+- Test case
+- Function
+
+Teacher
+- Login
+- add/edit/remove Info
+- sent grade
+- upload file
+
+Student
+- view Info
+
+Score : 8/10
