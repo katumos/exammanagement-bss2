@@ -267,20 +267,6 @@ def room_info_page(request, room_id, date, time, subj):
         return login_page(request) 
     room = ExamRoomInfo.objects.get(roomID=room_id,date=date,time=time,subj=subj)    
     return render_to_response('room_info.html',{'room':room})
-    
-def edit_room_info_page(request, room_id, date, time, subj):
-    errors = []
-    if not request.user.is_authenticated():        
-        return login_page(request)
-    room = ExamRoomInfo.objects.get(roomID=room_id,date=date,time=time,subj=subj)
-    if ( 'id' in request.GET and request.GET['id'] ) :
-        new_id = request.GET['id']
-        if not ExamRoomInfo.objects.filter(roomID=new_id):
-            room.roomID = new_id
-            room.save()
-        else :
-            errors.append('ID does exist already.')        
-    return render_to_response('edit_room_info.html',{'room':room})
 
 def delete_room_info_confirm_page(request, room_id, date, time, subj):
     if not request.user.is_authenticated():        

@@ -33,7 +33,7 @@
 					Room : {{ info.2 }}<br/>
 					Date : {{ info.3 }}<br/>
 					Time : {{ info.4 }}<br/>	
-					<center><input type="button" onClick="window.location.href='http://127.0.0.1:8000/seat/view/{{ info.2 }}/{{ info.3 }}/{{ info.4 }}'" value="view seat"></center>				
+					<center><input type="button" onClick="window.location.href='http://127.0.0.1:8000/seat/view/{{ std.stdID }}/{{ info.2 }}/{{ info.3 }}/{{ info.4 }}'" value="view seat"></center>				
 					</fieldset></center><br/>
 				{% endfor %}
 			{% endif %}
