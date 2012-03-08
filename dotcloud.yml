@@ -1,0 +1,5 @@
+www:
+ type: python
+
+
+#บอกว่าใช้ ภาษา python บน dotcloud
