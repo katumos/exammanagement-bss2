@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Student Information</title>
+</head>
+
+<body bgcolor="#CCCCCC">
+<br>
+<table width="800" height="494" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <th height="62" colspan="2" style=" background-color:#F90" scope="col"><font color="#FFFFFF">Exam Room Management<font></th>
+  </tr>
+  <tr>
+    <th width="190" height="427" scope="row" style="background-color:#F90" > <div align="center"><b><font color="#FFFFFF">Menu<font><br><br>
+      <!-- <center xmlns="http://www.w3.org/1999/xhtml">
+		<br/><input type="button" value="Student" onClick="window.location.href='http://127.0.0.1:8000/student/'"/><br/>
+		<br/><input type="button" value="Subject" onClick="window.location.href='http://127.0.0.1:8000/subject/'"/><br/>
+		<br/><input type="button" value="Room" onClick="window.location.href='http://127.0.0.1:8000/room/'"/><br/> -->
+		<br/><input type="button" value="Back" onClick="window.location.href='http://127.0.0.1:8000/'"/>
+		</center>
+    </div>
+    </th>
+    <td width="610" style="background-color:#FFF"> <center><h3>Student Information</h3><br>
+		{% if std %}							
+			<center><table cellpadding="5" cellspacing="10"<tr><td >  							
+			<p>Student ID : {{ std.stdID }}</p>
+			<p>Student Name : {{ std.stdName }}</p>
+			{% if arrInfo %}
+				{% for info in arrInfo %}				
+					<center><fieldset>
+					<legend>{{ info.1 }}</legend>
+					Subject : {{ info.0 }} {{ info.1 }}<br/>
+					Room : {{ info.2 }}<br/>
+					Date : {{ info.3 }}<br/>
+					Time : {{ info.4 }}<br/>	
+					<center><input type="button" onClick="window.location.href='http://127.0.0.1:8000/seat/view/{{ std.stdID }}/{{ info.2 }}/{{ info.3 }}/{{ info.4 }}'" value="view seat"></center>				
+					</fieldset></center><br/>
+				{% endfor %}
+			{% endif %}
+			</table></center>			
+		{% else %}
+			<p>No Information</p>
+		{% endif %}
+		<br><br><br>
+		<!-- <input type="button" onClick="window.location.href='http://127.0.0.1:8000/'" value="Back"> -->
+    </td>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+</body>
+</html>
