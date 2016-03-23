@@ -1,0 +1,1 @@
+1 issue push Use case และ Function Define
